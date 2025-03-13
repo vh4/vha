@@ -1,0 +1,16 @@
+.picture_magazine {
+    width: 279px;
+    height: 250px;
+    border-radius: 75% 25% 39% 61% / 56% 30% 70% 44%;
+    background-color: #8A6FE3; /* Gunakan warna HEX sebagai alternatif */
+    overflow: hidden; /* Agar gambar mengikuti border-radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body_font{
+    font-family: 'Blorado', sans-serif;
+    color: oklch(0.551 0.027 264.364);
+}
+

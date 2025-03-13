@@ -1,0 +1,18 @@
+{
+    "menu": {
+      "title":"AnakMami",
+      "home": "Home",
+      "about": "About",
+      "project": "Project",
+      "sale": "Sale"
+    },
+    "home":{
+      "description_1":"Please, Let'me introduce my self. I;m Fathoni Waseso Jati and you can call me Tony. I'm from Surakarta, Indonesia. I'm graduated at Telkom University, majoring Computer Engineering.",
+      "description_2":"Working as Software Engineer with 3 years of experience building modern, responsive web UIs using React.js and Next.js. Proficient in integrating frontend with secure, scalable REST APIs using Node.js and Nest.js.",
+      "see_more":"See more About me",
+      "title":"Hi, I'm ",
+      "name_1":"Fathoni",
+      "name_2":"Waseso",
+      "name_3":"Jati"
+    }
+  }
