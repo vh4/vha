@@ -76,7 +76,7 @@ export default function Home() {
   const home = useTranslations("home");
   return (
     <Layout>
-      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 px-0 lg:px-24 py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 px-0 lg:px-24 py-6 lg:py-10">
         {/* Left box for descriptions */}
         <Box className="col-span-8">
           <Box className="min-h-[360px]">

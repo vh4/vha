@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import { Flex, Text } from "@radix-ui/themes";
+import { Box, Flex, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import {
   Select,
@@ -12,12 +12,17 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import { IoSunnyOutline } from "react-icons/io5";
-import { Button } from "@/components/ui/button";
+import { WiMoonAltThirdQuarter } from "react-icons/wi";
+import gsap from "gsap";
 
-export const Toggle = () => {
+interface isOpenProps {
+  isMenuOpen: boolean;
+  menuToggleRef: RefObject<HTMLDivElement | null>;
+}
+export const Toggle: React.FC<isOpenProps> = ({ isMenuOpen, menuToggleRef }) => {
   const router = useRouter();
   const [language, setLanguage] = useState("");
+  const opacity = isMenuOpen ? 'opacity-100' : 'opacity-0 lg:opacity-100';
 
   useEffect(() => {
     const storedLocale = Cookies.get("locale");
@@ -38,13 +43,14 @@ export const Toggle = () => {
   };
 
   return (
-    <Flex gap="2">
-      <Button className="cursor-pointer" variant="ghost">
-        <IoSunnyOutline size={32} />
+    <Flex gap={'4'}>
+      <Box ref={menuToggleRef} className={`absolute ${opacity} top-[-100%] lg:top-0 lg:static z-50 mt-12 lg:mt-2 left-12 cursor-pointer`} >
+        <WiMoonAltThirdQuarter size={32} className="text-gray-600" />
         <span className="sr-only">Toggle theme</span>
-      </Button>
+      </Box>
       {/* Select Dropdown */}
-      <Select value={language} onValueChange={handleLanguageChange}>
+      <Box className="mt-0 lg:mt-1 absolute right-20 top-11 lg:static">
+        <Select value={language} onValueChange={handleLanguageChange}>
         <SelectTrigger className="w-[70px]">
           <SelectValue placeholder="Select Language" />
         </SelectTrigger>
@@ -68,6 +74,9 @@ export const Toggle = () => {
           </SelectItem>
         </SelectContent>
       </Select>
+      </Box>
     </Flex>
   );
 };
+
+

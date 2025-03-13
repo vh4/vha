@@ -1,7 +1,8 @@
-import { Flex, Text } from "@radix-ui/themes";
+import { Box, Flex, Text } from "@radix-ui/themes";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { RxCross1 } from "react-icons/rx";
 
 interface MenuItem {
   title: string;
@@ -10,6 +11,13 @@ interface MenuItem {
 
 interface MenuProps {
   data: MenuItem[];
+  showMenuMobile: Function;
+  path:string
+}
+
+interface Menu {
+  title: string;
+  url: string;
 }
 
 const HoverAnimation = (element: HTMLParagraphElement | null, reverse = false) => {
@@ -29,39 +37,77 @@ const HoverAnimation = (element: HTMLParagraphElement | null, reverse = false) =
   );
 };
 
-const MenuItemComponent: React.FC<{ item: MenuItem; index: number; menuRefs: React.MutableRefObject<(HTMLParagraphElement | null)[]> }> = ({
+const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; menuRefs: React.MutableRefObject<(HTMLParagraphElement | null)[]> }> = ({
   item,
   index,
   menuRefs,
-}) => (
-  <Link key={index} href={item.url}>
-    <Text
-      as="p"
-      ref={(el) => {
-        menuRefs.current[index] = el as HTMLParagraphElement | null;
-      }}
-      onMouseEnter={() => HoverAnimation(menuRefs.current[index])}
-      onMouseLeave={() => HoverAnimation(menuRefs.current[index], true)}
-      className="cursor-pointer relative pb-1 min-w-[40px] text-center"
-    >
-      {item.title}
-      <span className="hover-line absolute left-0 bottom-0 h-[0.5px] bg-black"></span>
-    </Text>
-  </Link>
-);
+  path
+}) => {
 
-export const Menu: React.FC<MenuProps> = ({ data }) => {
+  useEffect(() => {
+  const element = menuRefs.current[index];
+  if (!element) return;
+
+  const hoverLine = element.querySelector(".hover-line") as HTMLSpanElement | null;
+  if (!hoverLine) return;
+  
+  if(path == item.url){
+    gsap.fromTo(
+      hoverLine,
+      { width: "0%", opacity:  0 },
+      {
+        width: "100%",
+        duration: 0.5,
+        opacity: 1,
+        ease: "power2.inOut",
+      }
+    );
+
+    gsap.to(
+      menuRefs.current[index],
+      {
+        color:'black'
+      }
+    );
+
+  }
+  }, [])
+
+  return(
+      <Link key={index} href={item.url}>
+        <Text
+          as="p"
+          ref={(el) => {
+            menuRefs.current[index] = el as HTMLParagraphElement | null;
+          }}
+          onMouseEnter={() => HoverAnimation(menuRefs.current[index])}
+          onMouseLeave={() => HoverAnimation(menuRefs.current[index], true)}
+          className="cursor-pointer relative pb-1 min-w-[40px] text-center text-2xl text-slate-500 lg:text-black font-semibold lg:font-normal lg:text-sm py-6 lg:py-0"
+        >
+          {item.title}
+          <span className="hover-line absolute left-0 bottom-0 h-[0.5px] bg-black"></span>
+        </Text>
+      </Link>
+      )
+  };
+
+export const Menu: React.FC<MenuProps> = ({ data, showMenuMobile, path }) => {
   const menuRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
   return (
-    <Flex
-      gap="5"
-      align="center"
-      className="font-light text-sm mt-2 flex-col items-center lg:flex-row"
-    >
-      {data.map((item, index) => (
-        <MenuItemComponent key={index} item={item} index={index} menuRefs={menuRefs} />
-      ))}
+    <Flex justify={'between'}>
+        <Flex
+        gap="5"
+        align="center"
+        className="font-light text-sm mt-2 flex-col items-center lg:flex-row"
+      >
+          {data.map((item, index) => (
+            <MenuItemComponent path={path} key={index} item={item} index={index} menuRefs={menuRefs} />
+          ))}
+      </Flex>
+      <Box onClick={() => showMenuMobile()} className="absolute right-12 mt-8 cursor-pointer">
+          <RxCross1 size={28} className="text-gray-500 block lg:hidden" />
+      </Box>
     </Flex>
   );
 };

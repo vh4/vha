@@ -10,6 +10,10 @@ export const getMenuList = (): Menu[] => {
 
   return [
     {
+      title: menu("home"),
+      url: "/",
+    },
+    {
       title: menu("about"),
       url: "/about",
     },
