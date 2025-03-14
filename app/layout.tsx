@@ -22,7 +22,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fontClass} antialiased`}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
         <Theme>
             <NextIntlClientProvider messages={messages}>
               <Box className={`${fontClass}`}>

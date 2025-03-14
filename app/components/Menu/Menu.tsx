@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { RxCross1 } from "react-icons/rx";
+import { useTheme } from "next-themes";
 
 interface MenuItem {
   title: string;
@@ -44,13 +45,15 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
   path
 }) => {
 
+  const { theme} = useTheme()
+  
   useEffect(() => {
   const element = menuRefs.current[index];
   if (!element) return;
 
   const hoverLine = element.querySelector(".hover-line") as HTMLSpanElement | null;
   if (!hoverLine) return;
-  
+
   if(path == item.url){
     gsap.fromTo(
       hoverLine,
@@ -66,7 +69,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
     gsap.to(
       menuRefs.current[index],
       {
-        color:'black'
+        color: theme === 'dark' ? 'white' : 'black'
       }
     );
 
@@ -82,7 +85,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
           }}
           onMouseEnter={() => HoverAnimation(menuRefs.current[index])}
           onMouseLeave={() => HoverAnimation(menuRefs.current[index], true)}
-          className="cursor-pointer relative pb-1 min-w-[40px] text-center text-2xl text-slate-500 lg:text-black font-semibold lg:font-normal lg:text-sm py-6 lg:py-0"
+          className="cursor-pointer relative pb-1 min-w-[40px] text-center text-2xl text-slate-500 lg:text-black lg:dark:text-white font-semibold lg:font-normal lg:text-sm py-6 lg:py-0"
         >
           {item.title}
           <span className="hover-line absolute left-0 bottom-0 h-[0.5px] bg-black"></span>

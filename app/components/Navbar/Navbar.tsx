@@ -81,7 +81,7 @@ export const Header = () => {
                  isMenuOpen={isMenuOpen}
                  menuToggleRef={menuToggleRef}
                />   
-               <Box onClick={() => showMenuMobile()}  className="cursor-pointer p-4 hover:bg-gray-100 rounded-lg active:bg-gray-150" >
+               <Box onClick={() => showMenuMobile()}  className="cursor-pointer p-4 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg active:bg-gray-150" >
                 <CiMenuBurger className="text-2xl block lg:hidden" />
               </Box>          
             {/* End Navigation Menu */}

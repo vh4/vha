@@ -45,7 +45,7 @@ export const Toggle: React.FC<isOpenProps> = ({ isMenuOpen, menuToggleRef }) => 
   return (
     <Flex gap={'4'}>
       <Box ref={menuToggleRef} className={`absolute ${opacity} top-[-100%] lg:top-0 lg:static z-50 mt-12 lg:mt-2 left-12 cursor-pointer`} >
-        <WiMoonAltThirdQuarter size={32} className="text-gray-600" />
+        <WiMoonAltThirdQuarter size={32} className="text-gray-600 dark:text-gray-100" />
         <span className="sr-only">Toggle theme</span>
       </Box>
       {/* Select Dropdown */}
