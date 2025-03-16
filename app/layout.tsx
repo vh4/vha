@@ -26,7 +26,7 @@ export default async function RootLayout({
         <Theme>
             <NextIntlClientProvider messages={messages}>
               <Box className={`${fontClass}`}>
-                <Container size="4" className="p-4 lg:p-0">
+                <Container size='4' className="p-4 lg:p-0">
                   {children}
                 </Container>
               </Box>

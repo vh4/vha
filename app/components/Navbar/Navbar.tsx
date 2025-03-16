@@ -70,7 +70,7 @@ export const Header = () => {
           <Box>
             {/* Navigation Menu */}
             <Flex gap={"8"} align={"center"}>
-               <div ref={menuRef} className='absolute lg:static bg-white dark:bg-black top-[-100%] opacity-0 lg:opacity-100 min-h-full lg:min-h-fit left-0 w-full z-50 flex pt-4 lg:pt-0 justify-center' >
+               <div ref={menuRef} className='absolute lg:static bg-white dark:bg-black lg:dark:bg-transparent top-[-100%] opacity-0 lg:opacity-100 min-h-full lg:min-h-fit left-0 w-full z-50 flex pt-4 lg:pt-0 justify-center' >
                 <Menu
                     data={getMenuList()} 
                     showMenuMobile={showMenuMobile}

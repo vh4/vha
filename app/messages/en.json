@@ -14,5 +14,34 @@
       "name_1":"Fathoni",
       "name_2":"Waseso",
       "name_3":"Jati"
+    },
+    "about":{
+      "title": "About Me",
+      "desc": "Here you will find more information about my skills.",
+      "desc_1": "I'm a developer passionate about web apps and AI, creating seamless user interfaces thoughtful design with robust engineering. My vision is to build smooth, user-friendly UIs that provide an enjoyable and comfortable experience while ensuring high performance, scalability, and top-level security for backend development.",
+      "desc_2": "Currently, I'm working as a Software Engineer at a finance company with approximately 3 years of experience. I contribute to designing, building, documenting, and maintaining UIs for the frontend and backend, ensuring clean, understandable code and best practices to deliver an optimal user experience.",
+      "desc_3": "I’ve had the opportunity to develop web applications across a variety of products — including online bill payments, travel bookings, and CRM solutions for business strategy. I have also built and maintained APIs for major partners such as Tokopedia, Artajasa, etc —  Now, I am seeking a Software Engineer or AI-related position where I can grow professionally, and make meaningful contributions to partners."
+    },
+    "project":{
+      "title": "Projects",
+      "desc": "Here you can select a project from the menu.",
+      "project_title_1":"Payment Bills",
+      "project_sub_1": "This project is an online payment system for electricity, water, taxes, and bank transfers, including e-wallets like OVO, Dana, and others.",
+      "project_description_1":"Developed REST APIs for Payment Point on Banking (PPOB) transactions, including services such as game vouchers, electricity bills, water bills, and taxes. Utilized PHP and Node.js with TypeScript to manage integrations with partners like Tokopedia and Artajasa, ensuring smooth operations and implementing high-security protocols such as JWT authentication and asymmetric cryptography. Designed and developed a seamless, responsive PPOB web application using Next.js and MUI, tailored for partner use. Implemented secure REST APIs with Nest.js to efficiently support frontend functionalities and ensure robust data flow.",
+      "project_title_2":"Travel Booking",
+      "project_sub_2": "This project is a web-based embedded system for online travel booking, including flights, trains, Pelni ships, and DLU ships, making it easy for partners to integrate.",
+      "project_description_2":"Designed and developed a web application for travel services, including train, plane, and ship ticketing. Used React.js for the frontend and created secure backend REST APIs with Node.js, integrating JWT authentication to ensure data security.",
+      "project_title_3":"Flazz Card Payment",
+      "project_sub_3": "This project provides an API for a multifunctional transaction card with RFID (Radio Frequency Identification) chip technology, facilitating the non-cash payment process through a biller aggregator.",
+      "project_description_3":"Developed REST APIs for BCA and BNI Flazz integrations, utilizing Java Selvet for biller connections and Node.js for partner-facing API services. Enabled tap card payments on both mobile and web platforms, streamlining payment processes and enhancing partner efficiency.",
+      "project_title_4":"Automation Transactions Callback",
+      "project_description_4":"Developed callback APIs in TypeScript to manage pending transactions. Delivered callbacks within minutes and provided customizable formats to meet user requirements, ensuring seamless transaction processing.",
+      "project_sub_4": "This project retries pending transactions and sends the response back to the partner.",
+      "project_title_5":"Broadcasts Weather to Aircraft",
+      "project_sub_5":"This project converts weather data from text to speech and broadcasts it to aircraft.",
+      "project_description_5":"Create and develop system services, such as Aerodrome ATIS, aimed at parsing weather data from around the airport for processing using python. The ATIS system automatically broadcasts the processed data to aircraft for notification of surrounding weather conditions.",
+      "project_title_6":"Prediction electricity consumption",
+      "project_sub_6": "This project is a smart meter system for topping up electricity tokens and predicting usage duration.",
+      "project_description_6":"Completed a research project focused on smart meter development. Developed a predictive system for electricity consumption using the LSTM algorithm. Built and maintained a web application with the Laravel PHP framework and integrated the system with a REST API to enable real-time data exchange and control"
     }
   }

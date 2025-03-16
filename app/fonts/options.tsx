@@ -29,7 +29,7 @@ export const getFontClassName = async () => {
     
     const fontMap: Record<string, string> = {
         en: poppins.className,
-        ja: zenKurenaido.className,
+        // ja: zenKurenaido.className,
     };
 
     return fontMap[locale] || interTight.className;

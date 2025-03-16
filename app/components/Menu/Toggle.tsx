@@ -13,7 +13,11 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { WiMoonAltThirdQuarter } from "react-icons/wi";
+import { useTheme } from "next-themes";
+import { Flip } from 'gsap/Flip';
 import gsap from "gsap";
+
+gsap.registerPlugin(Flip);
 
 interface isOpenProps {
   isMenuOpen: boolean;
@@ -23,7 +27,8 @@ export const Toggle: React.FC<isOpenProps> = ({ isMenuOpen, menuToggleRef }) => 
   const router = useRouter();
   const [language, setLanguage] = useState("");
   const opacity = isMenuOpen ? 'opacity-100' : 'opacity-0 lg:opacity-100';
-
+  const {theme,setTheme} = useTheme();
+  
   useEffect(() => {
     const storedLocale = Cookies.get("locale");
     if (storedLocale) {
@@ -42,9 +47,14 @@ export const Toggle: React.FC<isOpenProps> = ({ isMenuOpen, menuToggleRef }) => 
     router.refresh();
   };
 
+  const handleToggleDarkLight = () => {
+    setTheme(theme === "dark" ? "light" : "dark"); 
+  };
+
+  
   return (
     <Flex gap={'4'}>
-      <Box ref={menuToggleRef} className={`absolute ${opacity} top-[-100%] lg:top-0 lg:static z-50 mt-12 lg:mt-2 left-12 cursor-pointer`} >
+      <Box onClick={handleToggleDarkLight} ref={menuToggleRef} className={`absolute ${opacity} top-[-100%] lg:top-0 lg:static z-50 mt-12 lg:mt-2 left-12 cursor-pointer`} >
         <WiMoonAltThirdQuarter size={32} className="text-gray-600 dark:text-gray-100" />
         <span className="sr-only">Toggle theme</span>
       </Box>

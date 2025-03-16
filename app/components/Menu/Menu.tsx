@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Flex, Text } from "@radix-ui/themes";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
@@ -60,6 +62,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
       { width: "0%", opacity:  0 },
       {
         width: "100%",
+        color: theme === "dark" ? "white" : 'black',
         duration: 0.5,
         opacity: 1,
         ease: "power2.inOut",
@@ -74,7 +77,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
     );
 
   }
-  }, [])
+  })
 
   return(
       <Link key={index} href={item.url}>
@@ -88,7 +91,7 @@ const MenuItemComponent: React.FC<{ item: MenuItem; path:string; index: number; 
           className="cursor-pointer relative pb-1 min-w-[40px] text-center text-2xl text-slate-500 lg:text-black lg:dark:text-white font-semibold lg:font-normal lg:text-sm py-6 lg:py-0"
         >
           {item.title}
-          <span className="hover-line absolute left-0 bottom-0 h-[0.5px] bg-black"></span>
+          <span className="hover-line absolute left-0 bottom-0 h-[0.5px] bg-black dark:bg-white"></span>
         </Text>
       </Link>
       )

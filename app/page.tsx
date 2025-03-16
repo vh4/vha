@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import RotatingText from "./animations/RotatingText/RotatingText";
 import { FooterLink } from "./components/Footer/Footer";
 import { Layout } from "./components/layouts/layout";
+import Link from "next/link";
 
 interface SplitTextProps {
   text?: string;
@@ -76,7 +77,7 @@ export default function Home() {
   const home = useTranslations("home");
   return (
     <Layout>
-      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 px-0 lg:px-24 py-6 lg:py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 px-0 lg:px-12 py-6 lg:py-10">
         {/* Left box for descriptions */}
         <Box className="col-span-8">
           <Box className="min-h-[360px]">
@@ -100,9 +101,11 @@ export default function Home() {
               className="space-x-2"
             >
               <Box className="cursor-pointer">
+                <Link href={'/about'}>
                 <Text className={`mt-4 ${styles.body_font}`}>
                   {home("see_more")}
                 </Text>
+                </Link>
               </Box>
               <Box className={`scroll`}>
                 <Box className={`line`}></Box>
