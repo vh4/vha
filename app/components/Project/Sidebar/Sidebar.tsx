@@ -25,7 +25,7 @@ interface Menu {
 interface SidebarProps{
     pickData: Menu | null;
     toggleSidebar: boolean;
-    setToggleSidebar: Function;
+    setToggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Sidebars: React.FC<SidebarProps> = ({pickData, toggleSidebar, setToggleSidebar}) => {

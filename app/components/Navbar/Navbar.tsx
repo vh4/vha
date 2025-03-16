@@ -2,11 +2,11 @@
 
 import { Box, Flex } from "@radix-ui/themes";
 import { Menu } from "../Menu/Menu";
-import { getMenuList } from "../AppData/MenuList";
+import { useGetMenuList } from "../AppData/MenuList";
 import { Toggle } from "../Menu/Toggle";
 import { Logo } from "../Menu/Logo";
 import { CiMenuBurger } from "react-icons/ci";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState} from "react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 
@@ -72,7 +72,7 @@ export const Header = () => {
             <Flex gap={"8"} align={"center"}>
                <div ref={menuRef} className='absolute lg:static bg-white dark:bg-black lg:dark:bg-transparent top-[-100%] opacity-0 lg:opacity-100 min-h-full lg:min-h-fit left-0 w-full z-50 flex pt-4 lg:pt-0 justify-center' >
                 <Menu
-                    data={getMenuList()} 
+                    data={useGetMenuList()} 
                     showMenuMobile={showMenuMobile}
                     path={path}
                 />

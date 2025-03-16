@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from "next-intl";
 
 interface Menu {
@@ -16,7 +18,7 @@ interface Menu {
   sub: string;
 }
 
-export const getMenuProjects = (): Menu[] => {
+export const useGetMenuProjects = (): Menu[] => {
   const menu = useTranslations("project");
 
   return [

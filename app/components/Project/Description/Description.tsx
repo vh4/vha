@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Box, Flex, Text } from "@radix-ui/themes";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useEffect, useRef, useState } from "react";
-import Cookies from 'js-cookie'; // Import js-cookie
+import { useEffect} from "react";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -29,8 +28,8 @@ interface MenuProps {
     data: DataProps[];
     pick: number;
     refPick: React.RefObject<HTMLDivElement | null>;
-    setPickData: Function;
-    setToggleSidebar: Function;
+    setPickData:  React.Dispatch<React.SetStateAction<DataProps | null>>;
+    setToggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 
 }
 

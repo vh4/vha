@@ -1,6 +1,6 @@
 "use client";
 
-import React, { RefObject, useEffect, useRef, useState } from "react";
+import React, { RefObject, useEffect,  useState } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Box, Flex, Text } from "@radix-ui/themes";

@@ -1,7 +1,7 @@
 'use server'
 
 import { getLocale } from 'next-intl/server';
-import { Poppins, Inter_Tight, Zen_Kurenaido } from 'next/font/google';
+import { Poppins, Inter_Tight } from 'next/font/google';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -13,13 +13,6 @@ const interTight = Inter_Tight({
     subsets: ['latin'],
     weight: ['100', '200', '300', '400', '500', '600', '700'],
     style: ['normal', 'italic'],
-    display: "swap",
-});
-
-const zenKurenaido = Zen_Kurenaido({
-    variable: "--font-zen",
-    weight: "400",
-    style: "normal",
     display: "swap",
 });
 

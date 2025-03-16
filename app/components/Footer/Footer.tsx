@@ -7,9 +7,8 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-interface Props {}
 
-export const FooterLink: React.FC<Props> = () => {
+export const FooterLink: React.FC = () => {
   return (
     <>
       <Flex className="mt-4 flex space-x-6 items-center">

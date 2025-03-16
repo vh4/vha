@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import RotatingText from "./animations/RotatingText/RotatingText";
 import { FooterLink } from "./components/Footer/Footer";
-import { Layout } from "./components/layouts/layout";
+import { LayoutMain } from "./components/layouts/LayoutMain";
 import Link from "next/link";
 
 interface SplitTextProps {
@@ -76,7 +76,7 @@ export default function Home() {
   
   const home = useTranslations("home");
   return (
-    <Layout>
+    <LayoutMain>
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 px-0 lg:px-12 py-6 lg:py-10">
         {/* Left box for descriptions */}
         <Box className="col-span-8">
@@ -135,6 +135,6 @@ export default function Home() {
           </Box>
         </div>
       </div>
-    </Layout>
+    </LayoutMain>
   );
 }

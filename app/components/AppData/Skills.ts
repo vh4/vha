@@ -2,7 +2,7 @@ interface Skills {
     title: string;
   }
   
-  export const getSkills = (): Skills[] => {
+  export const useGetSkills = (): Skills[] => {
     return [
       {
         title: "Javascript",

@@ -14,7 +14,7 @@ interface MenuItem {
 
 interface MenuProps {
   data: MenuItem[];
-  showMenuMobile: Function;
+  showMenuMobile: () => void;
   path:string
 }
 

@@ -1,16 +1,16 @@
 import { Box, Text } from "@radix-ui/themes";
-import { Layout } from "../components/layouts/layout";
+import { LayoutMain } from "../components/layouts/LayoutMain";
 import { Skills } from "../components/About/Skills/Skills";
-import { getSkills } from "../components/AppData/Skills";
+import { useGetSkills } from "../components/AppData/Skills";
 import { Descriptions } from "../components/About/Descriptions/Descriptions";
-import { getDescriptions } from "../components/AppData/Descriptions";
+import { useGetDescriptions } from "../components/AppData/Descriptions";
 import styles from "@/app/modules/main.module.css";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
   const menu = useTranslations("about");
   return (
-    <Layout>
+    <LayoutMain>
       <Box className="px-0 lg:px-12 py-6 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-4">
           <Box className="col-span-6">
@@ -38,16 +38,16 @@ export default function Home() {
             </Box>
             {/* skill */}
             <Box className="mt-8">
-                <Skills data={getSkills()} />
+                <Skills data={useGetSkills()} />
             </Box>
           </Box>
           <Box className="col-span-6 mt-12 lg:mt-0">
               <Descriptions 
-                data={getDescriptions()}
+                data={useGetDescriptions()}
               />
           </Box>
         </div>
       </Box>
-    </Layout>
+    </LayoutMain>
   );
 }

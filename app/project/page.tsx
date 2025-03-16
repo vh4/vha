@@ -4,10 +4,10 @@ import { Box, Text } from '@radix-ui/themes';
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { Layout } from '../components/layouts/layout';
+import { LayoutMain } from '../components/layouts/LayoutMain';
 import { MenuProject } from '../components/Project/Menu/Menu';
 import { DescriptionProject } from '../components/Project/Description/Description';
-import { getMenuProjects } from '../components/AppData/projects';
+import { useGetMenuProjects } from '../components/AppData/projects';
 
 import styles from '@/app/modules/main.module.css';
 import { Sidebars } from '../components/Project/Sidebar/Sidebar';
@@ -36,7 +36,7 @@ export default function Project() {
   const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
 
   return (
-    <Layout>
+    <LayoutMain>
       <Box className="px-0 lg:px-12 py-6 lg:py-10">
         <Sidebars 
           pickData={pickData}
@@ -61,20 +61,20 @@ export default function Project() {
               {menu('desc')}
             </Box>
             <Box style={{ marginTop: 10 }} className={`${styles.body_font}`}>
-              <MenuProject setPick={setPick} data={getMenuProjects()} />
+              <MenuProject setPick={setPick} data={useGetMenuProjects()} />
             </Box>
           </Box>
           <Box className={`${styles.body_font} col-span-6 mt-5 lg:mt-0`}>
             <DescriptionProject 
                 pick={pick} 
                 refPick={refPick} 
-                data={getMenuProjects()}
+                data={useGetMenuProjects()}
                 setPickData={setPickData}
                 setToggleSidebar={setToggleSidebar}
                 />
           </Box>
         </div>
       </Box>
-    </Layout>
+    </LayoutMain>
   );
 }

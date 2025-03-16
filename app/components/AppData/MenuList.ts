@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from "next-intl";
 
 interface Menu {
@@ -5,7 +7,7 @@ interface Menu {
   url: string;
 }
 
-export const getMenuList = (): Menu[] => {
+export const useGetMenuList = (): Menu[] => {
   const menu = useTranslations("menu");
 
   return [

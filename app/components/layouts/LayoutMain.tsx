@@ -1,7 +1,7 @@
 import { Box } from "@radix-ui/themes";
 import { Header } from "../Navbar/Navbar";
 
-export const Layout = ({
+export const LayoutMain = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
