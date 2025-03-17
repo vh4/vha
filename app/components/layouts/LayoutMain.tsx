@@ -6,7 +6,7 @@ export const LayoutMain = ({
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <Box>
-      <Box className="py-4 mt-0 lg:mt-4"><Header /></Box>
+      <Box className="pt-4 pb-2 mt-0 lg:mt-4"><Header /></Box>
       <Box>{children}</Box>
     </Box>
   );
