@@ -19,7 +19,7 @@ export const useGetSales = (): Menu[] => {
       desc: menu("desc_sale_1"),
       url: "https://www.fiverr.com/fathoniwasesoj/",
       image:'/ai.jpeg',
-      offer:[menu("offer1_sale_1"), menu("offer1_sale_1"), menu("offer3_sale_1"), menu("offer4_sale_1"), menu("offer5_sale_1")]
+      offer:[menu("offer1_sale_1"), menu("offer2_sale_1"), menu("offer3_sale_1"), menu("offer4_sale_1"), menu("offer5_sale_1")]
     },
     {
         title: menu("title_sale_2"),
