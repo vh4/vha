@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Text } from "@radix-ui/themes";
 import { LayoutMain } from "../components/layouts/LayoutMain";
 import { Skills } from "../components/About/Skills/Skills";
@@ -6,9 +8,16 @@ import { Descriptions } from "../components/About/Descriptions/Descriptions";
 import { useGetDescriptions } from "../components/AppData/Descriptions";
 import styles from "@/app/modules/main.module.css";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 
 export default function Home() {
   const menu = useTranslations("about");
+
+  useEffect(() => {
+    document.title = "About";
+  }, []);
+
+
   return (
     <LayoutMain>
       <Box className="px-0 lg:px-12 py-6 lg:py-10">

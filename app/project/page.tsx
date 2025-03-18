@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Text } from '@radix-ui/themes';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { LayoutMain } from '../components/layouts/LayoutMain';
@@ -35,14 +35,28 @@ export default function Project() {
   const [pickData, setPickData] = useState<Menu | null>(null);
   const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
 
+  const [isAnimating, setIsAnimating] = useState(true); //page transition aviod
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsAnimating(false), 3000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+   useEffect(() => {
+    document.title = "Projects";
+  }, []);
+
+
   return (
     <LayoutMain>
       <Box className="px-0 lg:px-12 py-6 lg:py-10">
-        <Sidebars 
+      {!isAnimating && (
+        <Sidebars
           pickData={pickData}
           toggleSidebar={toggleSidebar}
           setToggleSidebar={setToggleSidebar}
         />
+      )}
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-4">
           <Box className="col-span-6">
             <Box>

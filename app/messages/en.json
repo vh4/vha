@@ -70,7 +70,13 @@
     "offer2_sale_3":"Smart Contract",
     "offer3_sale_3":"Create Frontend",
     "offer4_sale_3":"Create Backend",
-    "offer5_sale_3":"Testing & Deploying"
+    "offer5_sale_3":"Testing & Deploying",
+
+    "text_title": "Price Tag",
+    "text_1":"Get a ",
+    "text_2":"30% ",
+    "text_3":"discount! Only $200 - $500 for your business apps."
+
 
   }
   }
