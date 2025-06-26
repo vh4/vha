@@ -1,9 +1,9 @@
-import { Flex} from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
 import { AiOutlineCodepenCircle } from "react-icons/ai";
 
 export const Logo = () => {
   return (
-    <Flex >
+    <Flex>
       <AiOutlineCodepenCircle className="text-[#ACD8FC] text-6xl" />
     </Flex>
   );

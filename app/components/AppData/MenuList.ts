@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useTranslations } from "next-intl";
 
@@ -26,6 +26,10 @@ export const useGetMenuList = (): Menu[] => {
     {
       title: menu("sale"),
       url: "/sale",
+    },
+        {
+      title: menu("economic-calendar"),
+      url: "/economic-calendar",
     },
   ];
 };

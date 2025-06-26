@@ -7,7 +7,6 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-
 export const FooterLink: React.FC = () => {
   return (
     <>

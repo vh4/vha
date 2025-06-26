@@ -17,7 +17,9 @@ export const Skills: React.FC<Skills> = ({ data }) => {
         {data.map((e) => (
           <Box key={e.title}>
             <Button size="lg">
-              <Text as="p" className={`${styles.body_font}`}>{e.title}</Text>
+              <Text as="p" className={`${styles.body_font}`}>
+                {e.title}
+              </Text>
             </Button>
           </Box>
         ))}

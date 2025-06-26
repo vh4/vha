@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Box, Flex, Text } from "@radix-ui/themes";
 import { LayoutMain } from "../components/layouts/LayoutMain";
@@ -57,7 +57,10 @@ export default function Home() {
                     {e.offer.map((m, i) => (
                       <Flex key={i} gap={"2"} align={"center"} className="mt-3">
                         <Box className="bg-green-100 rounded-full">
-                          <IoIosCheckmark size={24} className="text-green-500" />
+                          <IoIosCheckmark
+                            size={24}
+                            className="text-green-500"
+                          />
                         </Box>
                         <Box>
                           <Text as="div">{m}</Text>
@@ -67,12 +70,12 @@ export default function Home() {
                   </Box>
                   <Box className="w-full mt-5 mb-4">
                     <a href={e.url} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full cursor-pointer">
-                      <Flex gap={'1'} align={'center'}>
-                        <Text>Checkout</Text>
-                        <LiaExternalLinkAltSolid size={24} />
-                      </Flex>
-                    </Button>
+                      <Button className="w-full cursor-pointer">
+                        <Flex gap={"1"} align={"center"}>
+                          <Text>Checkout</Text>
+                          <LiaExternalLinkAltSolid size={24} />
+                        </Flex>
+                      </Button>
                     </a>
                   </Box>
                 </Box>
@@ -80,19 +83,20 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Flex justify={'center'} className="mt-10">
-        <div className="relative bg-gradient-to-r from-black via-gray-800 to-black rounded-xl w-full max-w-2xl border dark:border-gray-400 border-gray-800 shadow-lg">
-        {/* Badge */}
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-          {menu("text_title")}
-        </div>
-        
-        {/* Text */}
-        <p className="text-gray-300 text-center my-4">
-        {menu("text_1")} <span className="font-bold">{menu("text_2")}</span> {menu("text_3")}
-        </p>
+        <Flex justify={"center"} className="mt-10">
+          <div className="relative bg-gradient-to-r from-black via-gray-800 to-black rounded-xl w-full max-w-2xl border dark:border-gray-400 border-gray-800 shadow-lg">
+            {/* Badge */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              {menu("text_title")}
+            </div>
 
-      </div>
+            {/* Text */}
+            <p className="text-gray-300 text-center my-4">
+              {menu("text_1")}{" "}
+              <span className="font-bold">{menu("text_2")}</span>{" "}
+              {menu("text_3")}
+            </p>
+          </div>
         </Flex>
       </Box>
     </LayoutMain>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Box, Text } from "@radix-ui/themes";
 import Image from "next/image";
@@ -32,7 +32,7 @@ const SplitText: React.FC<SplitTextProps> = ({ text = "" }) => {
           duration: 0.2,
           ease: "power3.out",
           stagger: 0.1,
-        }
+        },
       );
     }
   }, [text]);
@@ -73,7 +73,6 @@ const SplitText: React.FC<SplitTextProps> = ({ text = "" }) => {
 };
 
 export default function Home() {
-  
   const home = useTranslations("home");
   return (
     <LayoutMain>
@@ -101,10 +100,10 @@ export default function Home() {
               className="space-x-2"
             >
               <Box className="cursor-pointer">
-                <Link href={'/about'}>
-                <Text className={`mt-4 ${styles.body_font}`}>
-                  {home("see_more")}
-                </Text>
+                <Link href={"/about"}>
+                  <Text className={`mt-4 ${styles.body_font}`}>
+                    {home("see_more")}
+                  </Text>
                 </Link>
               </Box>
               <Box className={`scroll`}>

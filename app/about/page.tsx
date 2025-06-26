@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Box, Text } from "@radix-ui/themes";
 import { LayoutMain } from "../components/layouts/LayoutMain";
@@ -17,7 +17,6 @@ export default function Home() {
     document.title = "About";
   }, []);
 
-
   return (
     <LayoutMain>
       <Box className="px-0 lg:px-12 py-6 lg:py-10">
@@ -33,7 +32,7 @@ export default function Home() {
                 }}
                 className={`${styles.body_font}`}
               >
-                {menu('title')}
+                {menu("title")}
               </Text>
             </Box>
             {/* roles */}
@@ -43,17 +42,15 @@ export default function Home() {
               }}
               className={`${styles.body_font}`}
             >
-            {menu('desc')}
+              {menu("desc")}
             </Box>
             {/* skill */}
             <Box className="mt-8">
-                <Skills data={useGetSkills()} />
+              <Skills data={useGetSkills()} />
             </Box>
           </Box>
           <Box className="col-span-6 mt-12 lg:mt-0">
-              <Descriptions 
-                data={useGetDescriptions()}
-              />
+            <Descriptions data={useGetDescriptions()} />
           </Box>
         </div>
       </Box>
