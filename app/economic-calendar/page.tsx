@@ -15,7 +15,6 @@ import { CalendarIcon } from "lucide-react";
 import EcoTable from "../components/Crypto/Table/Table";
 import moment from "moment";
 import axios from "axios";
-import TradingView from "../components/Crypto/TradingView/TradingView";
 
 type CalendarData = {
   calendarId?: string;
