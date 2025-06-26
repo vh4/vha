@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import NProgress from "nprogress"; // progress bar
 import 'nprogress/nprogress.css'; // global style for nprogress
 
 import { NextIntlClientProvider } from "next-intl";

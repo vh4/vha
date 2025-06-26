@@ -35,14 +35,14 @@ export async function POST(request: Request): Promise<Response> {
 
     // Read and parse JSON file
     const rawData = await fs.readFile("./data/economy-calendar.json", "utf-8");
-    const jsonData: Record<string, any[]> = JSON.parse(rawData);
+    const jsonData: Record<string, string[]> = JSON.parse(rawData);
 
     const impactValues = impact
       ? Array.isArray(impact)
         ? impact
         : [impact]
       : null;
-    const filteredData: Record<string, any[]> = {};
+    const filteredData: Record<string, string[]> = {};
 
     for (const dateKey in jsonData) {
       const currentDate = moment(dateKey, "YYYY-MM-DD");
@@ -78,12 +78,12 @@ export async function POST(request: Request): Promise<Response> {
         status: 200,
       },
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error filtering data:", error);
     return new Response(
       JSON.stringify({
         rc: "05",
-        rd: error.message,
+        rd: error,
         error: "Internal Server Error",
       }),
       {

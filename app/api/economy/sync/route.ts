@@ -114,12 +114,12 @@ export async function GET(): Promise<Response> {
         status: 200,
       },
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error fetching calendar data:", error);
     return new Response(
       JSON.stringify({
         rc: "05",
-        rd: error.message,
+        rd: error,
         error: "Internal Server Error",
       }),
       {
