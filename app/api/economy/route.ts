@@ -3,6 +3,33 @@
 import fs from "fs/promises";
 import moment from "moment-timezone";
 
+type CalendarData = {
+  calendarId?: string;
+  date?: string;
+  country?: string;
+  category?: string;
+  event?: string;
+  reference?: string;
+  referenceDate?: string;
+  source?: string;
+  sourceUrl?: string;
+  actual?: string;
+  previous?: string;
+  forecast?: string;
+  teForecast?: string;
+  url?: string;
+  dateSpan?: string;
+  importance?: string;
+  lastUpdate?: string;
+  revised?: string;
+  currency?: string;
+  unit?: string;
+  ticker?: string;
+  symbol?: string;
+};
+
+type CalendarGroupedData = Record<string, CalendarData[]>;
+
 export async function POST(request: Request): Promise<Response> {
   try {
     const body = await request.json();
@@ -35,14 +62,14 @@ export async function POST(request: Request): Promise<Response> {
 
     // Read and parse JSON file
     const rawData = await fs.readFile("./data/economy-calendar.json", "utf-8");
-    const jsonData: Record<string, string[]> = JSON.parse(rawData);
+    const jsonData: CalendarGroupedData = JSON.parse(rawData);
 
     const impactValues = impact
       ? Array.isArray(impact)
         ? impact
         : [impact]
       : null;
-    const filteredData: Record<string, string[]> = {};
+    const filteredData: CalendarGroupedData = {};
 
     for (const dateKey in jsonData) {
       const currentDate = moment(dateKey, "YYYY-MM-DD");
